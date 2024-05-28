@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src=" https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="/static/js/base.js" defer></script>
+    <title>Wind Gavre</title>
+</head>
+<body>
+    <nav>
+        <h1>WIND GAVRE</h1>
+    </nav>
+    <main>
+        <div class="box last-datas">
+            <h1>Dernières données</h1>
+            <div class="seperator"></div>
+            <span id="date">4/30/2024, 2:35:13 PM</span>
+            <div class="data">
+                <span class="value" id="lastSpeed">20 nds</span>
+                <span class="title">Vitesse du vent</span>
+            </div>
+            <div class="data">
+                <span class="value" id="lastDir">120°</span>
+                <span class="title">Direction du vent</span>
+            </div>
+        </div>
+        <div class="box wide">
+            <div class="chart-header">
+                <div class="links">
+                    <a href="/?2h">2 dernières heures</a>
+                    <a href="/?6h">6 dernières heures</a>
+                    <a href="/?24h">24 dernières heures</a>
+                    <a href="/?7d">7 derniers jours</a>
+                </div>
+            </div>
+            <canvas id="myChart"></canvas>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,124 @@
+$bg: hsl(0, 0%, 100%);
+$d-bg: hsl(0, 0%, 99%);
+$dd-bg: hsl(0, 0%, 90%);
+
+$l-text: hsl(0, 0%, 50%);
+$text: hsl(0, 0%, 0%);
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background-color: $bg;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    width: 100%;
+    height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid $dd-bg;
+}
+
+main {
+    display: flex;
+    gap: 20px;
+    padding: 40px;
+    height: 100%;
+
+    .box {
+        width: 30%;
+        height: 100%;
+
+        //background-color: $d-bg;
+        box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
+        border: 1px solid $dd-bg;
+        border-radius: 10px;
+
+        &.wide {
+            width: 100%;
+            height: 100%;
+        }
+
+        &.last-datas {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+            padding: 10px;
+            padding-top: 40px;
+
+            #date {
+                font-size: 12px;
+                color: $l-text;
+            }
+
+            .seperator {
+                width: 50%;
+                height: 1px;
+                background-color: $dd-bg;
+            }
+
+            .data {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10%;
+                
+                .value {
+                    font-size: 48px;
+                    font-weight: bold;
+                }
+
+                .title {
+                    color: $l-text;
+                }
+            }
+        }
+    }
+}
+
+.chart-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-bottom: 1px solid $dd-bg;
+    padding-bottom: 10px;
+
+    .links {
+        display: flex;
+        gap: 8px;
+        padding: 8px;
+
+        a {
+            width: 100%;
+            padding: 5px;
+            padding-inline: 10px;
+            background-color: $bg;
+            border: 1px solid $dd-bg;
+            border-radius: 6px;
+            text-align: center;
+            color: $text;
+        }
+    }
+
+    .datas {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+}
