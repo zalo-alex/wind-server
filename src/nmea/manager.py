@@ -20,8 +20,8 @@ class Manager:
 
         if parsed.SENTENCE_TYPE == "IIMWV":
             cursor.execute("""
-                INSERT INTO sentences (timestamp, sentence, sentence_type, wind_direction, wind_speed, state) VALUES (?, ?, ?, ?, ?, ?)
-            """, (timestamp, sentence, parsed.SENTENCE_TYPE, parsed.wind_direction, parsed.wind_speed, parsed.state))
+                INSERT INTO sentences (timestamp, sentence, wind_direction, wind_speed, state) VALUES (?, ?, ?, ?, ?, ?)
+            """, (timestamp, sentence, parsed.wind_direction, parsed.wind_speed, parsed.state))
 
         self.conn.commit()
 
