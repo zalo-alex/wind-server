@@ -89,6 +89,14 @@ main {
                 }
             }
         }
+
+        .warning {
+            display: none;
+            margin-left: 10px;
+            align-items: center;
+            gap: 5px;
+            color: #ff8a1d;
+        }
     }
 }
 
@@ -120,5 +128,19 @@ main {
         display: flex;
         gap: 20px;
         justify-content: center;
+    }
+}
+
+
+@media (max-width: 1750px) {
+    main {
+        flex-direction: column;
+        padding-inline: 0px;
+
+        .box {
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 0px;
+        }
     }
 }

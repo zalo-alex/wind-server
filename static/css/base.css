@@ -74,6 +74,13 @@ main .box.last-datas .data .value {
 main .box.last-datas .data .title {
   color: hsl(0, 0%, 50%);
 }
+main .box .warning {
+  display: none;
+  margin-left: 10px;
+  align-items: center;
+  gap: 5px;
+  color: #ff8a1d;
+}
 
 .chart-header {
   display: flex;
@@ -101,4 +108,16 @@ main .box.last-datas .data .title {
   display: flex;
   gap: 20px;
   justify-content: center;
+}
+
+@media (max-width: 1750px) {
+  main {
+    flex-direction: column;
+    padding-inline: 0px;
+  }
+  main .box {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 0px;
+  }
 }/*# sourceMappingURL=base.css.map */
