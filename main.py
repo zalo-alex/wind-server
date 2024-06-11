@@ -24,12 +24,12 @@ def nmea(nmea_sentence):
 def index():
     return render_template("base.html")
 
-@app.route("/wind/<delta>")
+@app.route("/api/wind/<delta>")
 def wind(delta):
     
     return manager.from_delta(delta)
 
-@app.route("/wind/last")
+@app.route("/api/wind/last")
 def wind_last():
     
     return {"data": manager.last()}

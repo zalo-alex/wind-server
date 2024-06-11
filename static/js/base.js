@@ -1,38 +1,15 @@
-// const data = [
-//     [
-//         4,
-//         1715333484,
-//         "$IIMWV,226.0,R,000.0,N,A *0B",
-//         "IIMWV",
-//         226,
-//         0,
-//         null,
-//         "A "
-//     ],
-//     [
-//         5,
-//         1715333528,
-//         "$IIMWV,226.0,R,000.0,N,A *0B",
-//         "IIMWV",
-//         226,
-//         0,
-//         null,
-//         "A "
-//     ],
-//     [
-//         6,
-//         1715333695,
-//         "$IIMWV,226.0,R,000.0,N,A *0B",
-//         "IIMWV",
-//         226,
-//         0,
-//         null,
-//         "A "
-//     ]
-// ]
-
 const delta = location.search.replace("?", "") || "2h"
 var data = {}
+
+async function setupLastData() {
+    const lastData = (await (await fetch(`/api/wind/last`)).json()).data
+    const windDir = lastData[3]
+    const windSpeed = lastData[4]
+
+    document.getElementById("lastDir").textContent = `${windDir}°`
+    document.getElementById("lastSpeed").textContent = `${windSpeed} nds`
+    document.getElementById("date").textContent = getDate(lastData[1]).toLocaleString() 
+}
 
 async function getDatas(label) {
 
@@ -52,7 +29,7 @@ async function getDatas(label) {
 
 async function setupChart() {
     
-    data = await (await fetch(`/wind/${delta}`)).json();
+    data = await (await fetch(`/api/wind/${delta}`)).json();
 
     var speed = await getDatas("Vitesse du vent")
     var dir = await getDatas("Direction du vent")
@@ -132,4 +109,5 @@ function formatToData(row, i) {
     }
 }
 
+setupLastData()
 setupChart()
